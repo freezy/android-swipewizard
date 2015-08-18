@@ -4,6 +4,22 @@ Swipe Wizard for Android
 A dynamic next/prev pager where each step defines the flow.
 
 
+Idea
+----
+
+A view pager for fragments. Every step corresponds to a fragment and defines on
+its own the next and previous step. This makes dynamic chaining up of wizard
+steps easy.
+
+
+Usage
+-----
+
+
+Download
+--------
+
+
 License
 -------
 
