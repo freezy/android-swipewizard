@@ -16,11 +16,10 @@ import android.view.ViewGroup;
  */
 public abstract class RelativePagerFragment extends Fragment {
 
-	protected final static String DATA_NEXT_STATUS = "com.kiwi.merchant.app.DATA_NEXT_STATUS";
-	protected final static String DATA_HAS_NEXT = "com.kiwi.merchant.app.DATA_HAS_NEXT";
+	protected final static String DATA_NEXT_STATUS = "ch.neh.android.DATA_NEXT_STATUS";
+	protected final static String DATA_HAS_NEXT = "ch.neh.android.app.DATA_HAS_NEXT";
 
-	private final @LayoutRes
-	int mLayout;
+	private final @LayoutRes int mLayout;
 
 	protected OnStatusChangeListener mStatusChangeListener;
 	protected FragmentStateManager mFragmentStateManager;
@@ -59,21 +58,19 @@ public abstract class RelativePagerFragment extends Fragment {
 
 	/**
 	 * Returns the next page.
-	 * @return Next page
+	 *
 	 * @param fsm Use to instantiate Fragment
+	 * @return Next page or {@code null} if next is disabled (or gone).
 	 */
-	public RelativePagerFragment getNext(FragmentStateManager fsm) {
-		return null;
-	}
+	public abstract RelativePagerFragment getNext(FragmentStateManager fsm);
 
 	/**
 	 * Returns the previous page.
-	 * @return Previous page
+	 *
 	 * @param fsm Use to instantiate Fragment
+	 * @return Previous page {@code null} if next is disabled (or gone).
 	 */
-	public RelativePagerFragment getPrev(FragmentStateManager fsm) {
-		return null;
-	}
+	public abstract RelativePagerFragment getPrev(FragmentStateManager fsm);
 
 	/**
 	 * Executed when the fragment is settled.

@@ -67,9 +67,9 @@ public class FragmentStateManager {
 		try {
 			return klass.newInstance();
 		} catch (InstantiationException e) {
-			throw new RuntimeException("Error instantiating fragment " + klass.getSimpleName(), e);
+			throw new RuntimeException("Error instantiating fragment " + klass.getSimpleName() + " (InstantiationException)", e);
 		} catch (IllegalAccessException e) {
-			throw new RuntimeException("Error instantiating fragment " + klass.getSimpleName(), e);
+			throw new RuntimeException("Error instantiating fragment " + klass.getSimpleName() + " (IllegalAccessException)", e);
 		}
 	}
 
