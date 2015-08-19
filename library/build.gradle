@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 
+def libraryVersionName = '0.1.1'
+def libraryVersionCode = 100
+
 ext {
 	bintrayRepo = 'maven'
 	bintrayName = 'swipewizard'
@@ -13,7 +16,7 @@ ext {
 	siteUrl = 'https://github.com/freezy/android-swipewizard'
 	gitUrl = 'https://github.com/freezy/android-swipewizard.git'
 
-	libraryVersion = '0.1.0'
+	libraryVersion = libraryVersionName
 
 	developerId = 'freezy'
 	developerName = 'freezy'
@@ -31,8 +34,8 @@ android {
 	defaultConfig {
 		minSdkVersion 10
 		targetSdkVersion 23
-		versionCode 1
-		versionName "1.0"
+		versionCode libraryVersionCode
+		versionName libraryVersionName
 	}
 	buildTypes {
 		release {

@@ -12,13 +12,79 @@ its own the next and previous step. This makes dynamic chaining up of wizard
 steps easy.
 
 
-Usage
------
-
-
 Download
 --------
 
+Add this line to your Gradle dependencies:
+
+    compile 'ch.neh.android:swipewizard:0.1.0@aar'
+
+
+Usage
+-----
+
+In order to use the pager, add this widget to your layout:
+
+```xml
+<ch.neh.android.swipepager.RelativeViewPager
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"/>
+```
+
+Then, in your Activity, initialize it:
+
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    // retrieve the pager from the view
+    mPager = (RelativeViewPager)findViewById(R.id.pager);
+
+    // create an adapter
+    mAdapter = new RelativePagerAdapter(getSupportFragmentManager(), getFragmentStateManager());
+
+    // initialize the first page
+    mAdapter.setInitialFragment(getFragmentStateManager().getFragment(WizardPage1Fragment.class));
+
+    // link pager to adapter
+    mPager.setAdapter(mAdapter);
+}
+```
+
+Finally, add a Fragment for each step of the wizard by extending `WizardStepFragment`:
+
+```java
+public class WizardPage1Fragment extends WizardStepFragment {
+
+	public WizardPage1Fragment() {
+		super(R.layout.fragment_wizard_1);
+	}
+
+	@Override
+	protected int hasNextButton() {
+		return STATUS_ENABLED;
+	}
+
+	@Override
+	protected int hasPrevButton() {
+		return STATUS_GONE;
+	}
+
+	@Override
+	public RelativePagerFragment getNext(FragmentStateManager fsm) {
+		return fsm.getFragment(WizardPage2Fragment.class);
+	}
+
+	@Override
+	public RelativePagerFragment getPrev(FragmentStateManager fsm) {
+		return null; // first step has no previous page.
+	}
+}
+```
 
 License
 -------
