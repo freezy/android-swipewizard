@@ -4,12 +4,36 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
+
+	<RadioGroup
+		android:id="@+id/radio_group"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+		android:layout_centerInParent="true">
+
+		<RadioButton
+			android:id="@+id/goto_a"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Continue with step 3A"
+			android:checked="true"/>
+
+		<RadioButton
+			android:id="@+id/goto_b"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Continue with step 3B"/>
+
+	</RadioGroup>
+
+
 	<TextView
-		android:id="@+id/textView"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/page_two"
-		android:layout_centerVertical="true"
-		android:layout_centerHorizontal="true"/>
+		android:layout_above="@id/radio_group"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="@dimen/activity_vertical_margin"
+		android:text="@string/page_two"/>
 
 </RelativeLayout>

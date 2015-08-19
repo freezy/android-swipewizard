@@ -77,7 +77,7 @@ public class FragmentStateManager {
 	 * Sets the {@link RelativePagerFragment.OnStatusChangeListener}, used by the pager.
 	 */
 	public void setOnStatusChangeListener(RelativePagerAdapter onStatusChangeListener) {
-		this.mOnStatusChangeListener = onStatusChangeListener;
+		mOnStatusChangeListener = onStatusChangeListener;
 	}
 
 	/**

@@ -91,8 +91,8 @@ public class RelativeViewPager extends ViewPager {
 		if (adapter instanceof RelativePagerAdapter) {
 			super.setAdapter(adapter);
 
-			this.mAdapter = (RelativePagerAdapter)adapter;
-			this.mAdapter.setPager(this);
+			mAdapter = (RelativePagerAdapter)adapter;
+			mAdapter.setPager(this);
 
 			initRelativeViewPager();
 
@@ -132,7 +132,7 @@ public class RelativeViewPager extends ViewPager {
 	 * @param enabled If true, enable, otherwise disable.
 	 */
 	public void setPagingPrevEnabled(boolean enabled) {
-		this.mEnabledPrev = enabled;
+		mEnabledPrev = enabled;
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class RelativeViewPager extends ViewPager {
 	 * @param enabled If true, enable, otherwise disable.
 	 */
 	public void setPagingNextEnabled(boolean enabled) {
-		this.mEnabledNext = enabled;
+		mEnabledNext = enabled;
 	}
 
 	public void setOnRelativePageChangeListener(OnRelativePageChangeListener listener) {
