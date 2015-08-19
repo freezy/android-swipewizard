@@ -123,7 +123,6 @@ public class RelativeViewPager extends ViewPager {
 				return true;
 			}
 		}
-		//Log.d("pager", "Event: " + event.getAction() + " (" + event.getX() + ")");
 		return super.onTouchEvent(event);
 	}
 
@@ -151,6 +150,7 @@ public class RelativeViewPager extends ViewPager {
 		if (mPageChangeListener != null) {
 			mPageChangeListener.onPageUpdated(mAdapter.getCurrentFragment());
 		}
+
 	}
 
 	public interface OnRelativePageChangeListener {

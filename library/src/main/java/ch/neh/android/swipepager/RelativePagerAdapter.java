@@ -29,7 +29,6 @@ public class RelativePagerAdapter extends FragmentStatePagerAdapter implements R
 	private RelativeViewPager pager;
 
 	private final FragmentStateManager fragmentStateManager;
-
 	private final FragmentManager fragmentManager;
 
 	public RelativePagerAdapter(FragmentManager fm, FragmentStateManager fsm) {
@@ -117,6 +116,7 @@ public class RelativePagerAdapter extends FragmentStatePagerAdapter implements R
 
 	@Override
 	public void onStatusUpdated() {
+		notifyDataSetChanged();
 		pager.onStatusUpdate();
 	}
 }

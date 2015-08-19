@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 
 import java.util.HashMap;
 
+import ch.neh.android.swipepager.RelativePagerFragment.OnStatusChangeListener;
+
 /**
  * Caches fragments for the {@link RelativePagerFragment}.
  *
@@ -13,7 +15,7 @@ import java.util.HashMap;
 public class FragmentStateManager {
 
 	private final HashMap<String, Fragment> mFragments = new HashMap<>();
-	private RelativePagerAdapter mOnStatusChangeListener;
+	private OnStatusChangeListener mOnStatusChangeListener;
 
 	public FragmentStateManager() {
 	}
@@ -74,16 +76,16 @@ public class FragmentStateManager {
 	}
 
 	/**
-	 * Sets the {@link RelativePagerFragment.OnStatusChangeListener}, used by the pager.
+	 * Sets the {@link OnStatusChangeListener}, used by the pager.
 	 */
 	public void setOnStatusChangeListener(RelativePagerAdapter onStatusChangeListener) {
 		mOnStatusChangeListener = onStatusChangeListener;
 	}
 
 	/**
-	 * Returns the {@link RelativePagerFragment.OnStatusChangeListener}.
+	 * Returns the {@link OnStatusChangeListener}.
 	 */
-	public RelativePagerAdapter getOnStatusChangeListener() {
+	public OnStatusChangeListener getOnStatusChangeListener() {
 		return mOnStatusChangeListener;
 	}
 

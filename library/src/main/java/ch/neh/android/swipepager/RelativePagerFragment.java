@@ -21,8 +21,8 @@ public abstract class RelativePagerFragment extends Fragment {
 
 	private final @LayoutRes int mLayout;
 
-	protected OnStatusChangeListener mStatusChangeListener;
-	protected FragmentStateManager mFragmentStateManager;
+	private OnStatusChangeListener mStatusChangeListener;
+	private FragmentStateManager mFragmentStateManager;
 
 	protected RelativePagerFragment(@LayoutRes int layout) {
 		mLayout = layout;
@@ -100,6 +100,25 @@ public abstract class RelativePagerFragment extends Fragment {
 	 */
 	protected Context getApplicationContext() {
 		return getActivity().getApplicationContext();
+	}
+
+	/**
+	 * Gives access to the status change listener, which allows
+	 * to paginate programmatically through the steps.
+	 *
+	 * @return Status change listener
+	 */
+	protected OnStatusChangeListener getStatusChangeListener() {
+		return mStatusChangeListener;
+	}
+
+	/**
+	 * Gives access to the frame state manager.
+	 *
+	 * @return FragmentStateManager
+	 */
+	protected FragmentStateManager getFragmentStateManager() {
+		return mFragmentStateManager;
 	}
 
 	/**

@@ -26,14 +26,14 @@ public class WizardPage2Fragment extends WizardStepFragment {
 				@Override
 				public void onClick(View v) {
 					mContinueWithA = true;
-					mStatusChangeListener.onStatusUpdated();
+					getStatusChangeListener().onStatusUpdated();
 				}
 			});
 			view.findViewById(R.id.goto_b).setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					mContinueWithA = false;
-					mStatusChangeListener.onStatusUpdated();
+					getStatusChangeListener().onStatusUpdated();
 				}
 			});
 		}
