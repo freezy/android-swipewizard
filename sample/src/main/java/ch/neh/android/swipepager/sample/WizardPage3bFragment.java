@@ -12,7 +12,7 @@ public class WizardPage3bFragment extends WizardStepFragment {
 
 	@Override
 	protected int hasNextButton() {
-		return STATUS_DISABLED;
+		return STATUS_ENABLED;
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class WizardPage3bFragment extends WizardStepFragment {
 
 	@Override
 	public RelativePagerFragment getNext(FragmentStateManager fsm) {
-		return null;
+		return fsm.getFragment(WizardPage4Fragment.class);
 	}
 
 	@Override

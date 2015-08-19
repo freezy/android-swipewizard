@@ -7,4 +7,7 @@
 	<string name="page_two">Page Two</string>
 	<string name="page_three_a">Page 3A</string>
 	<string name="page_three_b">Page 3B</string>
+	<string name="page_four">Page Four</string>
+	<string name="last_page">That\'s the last page!</string>
+	<string name="start_over">Start Over</string>
 </resources>
