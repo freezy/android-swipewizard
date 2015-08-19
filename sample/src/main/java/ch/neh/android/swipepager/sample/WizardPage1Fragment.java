@@ -27,6 +27,6 @@ public class WizardPage1Fragment extends WizardStepFragment {
 
 	@Override
 	public RelativePagerFragment getPrev(FragmentStateManager fsm) {
-		return null; // first step has no previous.
+		return null; // first step has no previous page.
 	}
 }
